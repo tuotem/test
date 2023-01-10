@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .btn {
+            padding: 30px 53px;
+            margin-bottom: 2px;
+            background: var(--color);
+            cursor: pointer;
+        }
+        
+        .btn:active {
+            box-shadow: 2px 2px 5px #000;
+        }
+
+        .btn-1 { --color: red; }
+        .btn-2 { --color: orange; }
+        .btn-3 { --color: blue; }
+        .btn-4 { --color: green; }
+        .btn-5 { --color: yellow; }
+        .btn-6 { --color: purple; }
+        .btn-7 { --color: black; }
+        .btn-8 { --color: brown; }
+
+    </style>
+</head>
+<body>
+    <center>
+        <button class="btn btn-1"></button>
+        <button class="btn btn-2"></button>
+        <button class="btn btn-3"></button>
+        <button class="btn btn-4"></button>
+        <button class="btn btn-5"></button>
+        <button class="btn btn-6"></button>
+        <button class="btn btn-7"></button>
+        <button class="btn btn-8"></button>
+    </center>
+</body>
+<script>
+
+    let btn = document.getElementsByClassName('btn');
+
+    for(let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener('click', function() {
+            let btnBgStyle = getComputedStyle(this);
+            let btnBgColor = btnBgStyle['backgroundColor'];
+            document.body.style.backgroundColor = btnBgColor;
+        });
+    }
+
+</script>
+</html>
